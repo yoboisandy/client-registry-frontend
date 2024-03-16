@@ -1,6 +1,6 @@
 import { AddClient } from "./components/AddClient/AddClient";
 import ClientsTable from "./components/CleintsTable/ClientsTable";
-import { Button } from "./components/ui/button";
+import { Toaster } from "react-hot-toast";
 
 function App() {
 	return (
@@ -21,6 +21,7 @@ function App() {
 					<ClientsTable />
 				</div>
 			</div>
+			<Toaster position="top-center" reverseOrder={false} />
 		</>
 	);
 }

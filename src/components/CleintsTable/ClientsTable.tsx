@@ -19,6 +19,7 @@ import { useQuery } from "react-query";
 import { getClients } from "@/services/clients";
 import { useState } from "react";
 import { Client } from "@/config/types";
+import toast from "react-hot-toast";
 
 const ClientsTable = () => {
 	const [page, setPage] = useState<number>(1);
@@ -28,6 +29,11 @@ const ClientsTable = () => {
 		() => getClients(page),
 		{
 			refetchOnWindowFocus: false,
+			onError: (error: any) => {
+				toast.error(
+					error?.response?.data?.message || "Failed to fetch clients."
+				);
+			},
 		}
 	);
 	return (
