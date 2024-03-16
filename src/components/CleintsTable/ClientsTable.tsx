@@ -31,7 +31,7 @@ const ClientsTable = () => {
 		}
 	);
 	return (
-		<div className="space-y-8">
+		<div className="space-y-8 px-4">
 			<Table>
 				<TableHeader>
 					<TableRow>

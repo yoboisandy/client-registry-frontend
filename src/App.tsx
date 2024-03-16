@@ -1,4 +1,6 @@
+import { AddClient } from "./components/AddClient/AddClient";
 import ClientsTable from "./components/CleintsTable/ClientsTable";
+import { Button } from "./components/ui/button";
 
 function App() {
 	return (
@@ -10,6 +12,12 @@ function App() {
 					</h1>
 				</div>
 				<div>
+					<div className="flex justify-between bg-primary-foreground px-4 py-2 items-cen">
+						<h2 className="text-primary text-2xl font-semibold">
+							Clients
+						</h2>
+						<AddClient />
+					</div>
 					<ClientsTable />
 				</div>
 			</div>
