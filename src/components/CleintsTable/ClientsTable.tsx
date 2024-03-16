@@ -18,6 +18,7 @@ import {
 import { useQuery } from "react-query";
 import { getClients } from "@/services/clients";
 import { useState } from "react";
+import { Client } from "@/config/types";
 
 const ClientsTable = () => {
 	const [page, setPage] = useState<number>(1);
@@ -45,7 +46,7 @@ const ClientsTable = () => {
 				</TableHeader>
 				<TableBody>
 					{!isFetching &&
-						data?.data?.map((client: any, index: number) => (
+						data?.data?.map((client: Client, index: number) => (
 							<TableRow key={client.id}>
 								<TableCell className="font-medium">
 									{(page - 1) * data?.pagination?.page_size +
